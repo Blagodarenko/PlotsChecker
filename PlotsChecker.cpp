@@ -85,7 +85,7 @@ int main(int argc, char* argv[])
 							if (sscanf_s(FindFileData.cFileName, "%llu_%llu_%llu_%llu", &key, &nonce, &nonces, &stagger) == 4)
 							{
 								file_size = (((static_cast<ULONGLONG>(FindFileData.nFileSizeHigh) << (sizeof(FindFileData.nFileSizeLow) * 8)) | FindFileData.nFileSizeLow));
-								if (file_size == nonces * 4096 * 64) {
+								if ((file_size == nonces * 4096 * 64) && (nonces % stagger == 0)) {
 									std::cout << "\nfile: " << FindFileData.cFileName;
 									SetConsoleTextAttribute(hStdout, ConsoleForeground::GREEN);
 									std::cout << "\tchecked - OK";
