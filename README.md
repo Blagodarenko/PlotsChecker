@@ -1,3 +1,5 @@
+PlotsChecker checks and validates plots to see if the name of the plots matches with the contents of the plotfile. If it finds any errors it corrects the plots by renaming and truncating it.
+
 ###Renaming
 If the plot is incomplete or missing a few nonces, the program is able to rename the plot and correct the file. Allowing space to be freed by truncating.
 
